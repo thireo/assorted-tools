@@ -1,0 +1,44 @@
+Run CMD in: C:\Users\at\AppData\Local\Android\sdk\platform-tools
+(Shift+Rightclick)
+
+Find danishcare packages:
+adb shell ps dk.danishcare
+adb shell pm list packages | grep dk.danishcare
+
+
+Uninstall package:
+adb uninstall dk.danishcare.epicare.free
+
+Find attached devices:
+adb devices -l
+
+Address specific device:
+adb -s DEVICEID
+
+Install APK:
+adb install C:\AndroidSVNStudios\EpiCare\APKs\AAAAAPPPPPKKK.apk
+
+Start main ECM activity:
+adb shell am start -n dk.danishcare.epicare.free/.EpiCareFreeActivity
+
+Battery Stats:
+adb shell dumpsys battery
+
+Unplug charger ADB:
+adb shell dumpsys battery unplug
+
+Force into idle (use multiple times):
+adb shell dumpsys deviceidle step
+
+
+Logcat via Wi-Fi:
+adb tcpip 5555
+adb connect ENHEDS_IP
+adb logcat output
+
+adb shell am broadcast -a "dk.danishcare.opkald.kald" --es nummer "29826637" 
+adb shell am broadcast -a "dk.danishcare.opkald.tæller" --el tæller 101010
+adb shell am broadcast -a "dk.danishcare.opkald.lægpå"
+
+adb -s 10.2.7.112 logcat -v color -s "SensorAlarmController","SensorActionService","UnderOpkaldService","MainOpkald","OpkaldsService"
+

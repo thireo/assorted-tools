@@ -1,0 +1,1 @@
+hex2bin /L143168 /P0xFF SC2.hex sc2pad.bin
