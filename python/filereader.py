@@ -2,7 +2,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-path = "../Data/Fra server/424270608/"
+path = "data/"
 count = 0
 cc = 0
 cc0 = 0
