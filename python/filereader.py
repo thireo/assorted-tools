@@ -14,12 +14,12 @@ def num_there(s):
 
 
 collData = {}
-for date in os.listdir(path):
+for date in sorted(os.listdir(path)):
     if(os.path.isdir(path+date) and date != "firmware" and date.__contains__("2019_07_08")):
         print(date)
         currentPackage = 0
         tempData = []
-        for file in os.listdir(path+date):
+        for file in sorted(os.listdir(path+date)):
             if(file.__contains__(".bin")):
                 with open(path+date+"/"+file, errors="ignore") as f:
                     data = []
