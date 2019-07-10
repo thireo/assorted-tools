@@ -15,7 +15,7 @@ def num_there(s):
 
 collData = {}
 for date in os.listdir(path):
-    if(os.path.isdir(path+date) and date != "firmware" and date.__contains__("2018_11_21")):
+    if(os.path.isdir(path+date) and date != "firmware" and date.__contains__("2019_07_08")):
         print(date)
         currentPackage = 0
         tempData = []
@@ -28,6 +28,7 @@ for date in os.listdir(path):
                         splitLine = line.split(" ")
                         if(splitLine[0].__contains__("Package")):
                             currentPackage = int(splitLine[2])
+                            #print(currentPackage)
                         splitLine = line.split("\t")
                         if(splitLine.__len__() > 2):
                             cc0 += 1
@@ -37,17 +38,27 @@ for date in os.listdir(path):
                                 cc1 += 1
                             else:
                                 cc += 1
-                    collData[currentPackage] = data
+                collData[currentPackage] = data
+                print(collData.__len__()," - ",currentPackage)
+                if(currentPackage == 0 and collData.__len__()>1):
+                    #print(collData.__len__())
+                    print("bob")
+                    for i in range(len(collData)-1):
+                        print(collData[collData.__len__()-1-i])
+                        tempData.extend(collData[collData.__len__()-i-1])
+                    collData = []
+
+        print(cc1)
         count = 0
         cc = 0
         cc0 = 0
         cc1 = 0
-
-tempo = []
-print(collData.__len__())
-print(range(collData.__len__()))
-for i in range(collData.__len__()):
-    tempo.extend(collData[collData.__len__()-i-1])
-
-plt.plot(tempo)
-plt.show()
+        print(collData.__len__())
+        #print(collData)
+        #tempo = []
+        #for i in range(.__len__()):
+        #    tempo.extend(collData[collData.__len__()-i-1])
+        #plt.plot(tempo)
+        #plt.show()
+        print(tempData)
+        #print(collData[9])
