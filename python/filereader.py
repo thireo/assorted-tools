@@ -43,10 +43,11 @@ for date in os.listdir(path):
                 if(currentPackage == 0 and collData.__len__()>1):
                     #print(collData.__len__())
                     print("bob")
-                    for i in range(len(collData)-1):
-                        print(collData[collData.__len__()-1-i])
+                    for i in range(len(collData)):
+                        #print(collData[collData.__len__()-1-i])
                         tempData.extend(collData[collData.__len__()-i-1])
-                    collData = []
+                    collData = {}
+                    currentPackage = 0
 
         print(cc1)
         count = 0
@@ -58,7 +59,7 @@ for date in os.listdir(path):
         #tempo = []
         #for i in range(.__len__()):
         #    tempo.extend(collData[collData.__len__()-i-1])
-        #plt.plot(tempo)
-        #plt.show()
-        print(tempData)
+        plt.plot(tempData)
+        plt.show()
+        #print(tempData)
         #print(collData[9])
