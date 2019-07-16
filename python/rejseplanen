@@ -1,0 +1,8 @@
+#!usr/bin/python
+
+import requests
+import pprint
+
+response = requests.get('http://xmlopen.rejseplanen.dk/bin/rest.exe/departureBoard?id=008600605&format=json')
+pp = pprint.PrettyPrinter(indent=4)
+pp.pprint(response.json())
