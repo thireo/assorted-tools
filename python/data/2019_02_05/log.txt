@@ -1,0 +1,272 @@
+05-02-2019 00:06:21Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 00:06:21 Comm success
+
+05-02-2019 00:26:29Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 00:26:29 Comm success
+
+05-02-2019 00:43:05Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 00:43:05 Comm success
+
+05-02-2019 01:04:40Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 01:04:40 Comm success
+
+05-02-2019 01:26:46Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 01:26:46 Comm success
+
+05-02-2019 01:46:53Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 01:46:53 Comm success
+
+05-02-2019 02:15:12Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 02:15:12 Comm success
+
+05-02-2019 02:47:12Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 02:47:12 Comm success
+
+05-02-2019 03:03:16Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 03:03:16 Comm success
+
+05-02-2019 03:47:29Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 03:47:29 Comm success
+
+05-02-2019 12:24:11Data received: read 987,  total read 987, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 987, expected: 987
+
+05-02-2019 12:24:11 Comm success
+
+05-02-2019 12:53:11Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 12:53:11 Comm success
+
+05-02-2019 13:13:11Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 13:13:11 Comm success
+
+05-02-2019 13:29:25Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 13:29:25 Comm success
+
+05-02-2019 13:53:36Data received: read 526,  total read 526, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 526, expected: 526
+
+05-02-2019 13:53:36 Comm success
+
+05-02-2019 14:08:42Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 14:08:42 Comm success
+
+05-02-2019 14:28:36Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 14:28:36 Comm success
+
+05-02-2019 14:41:47Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 14:41:47 Comm success
+
+05-02-2019 14:56:48Data received: read 260,  total read 260, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 260, expected: 260
+
+05-02-2019 14:56:48 Comm success
+
+05-02-2019 15:13:59Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 15:13:59 Comm success
+
+05-02-2019 15:37:05Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 15:37:05 Comm success
+
+05-02-2019 15:54:16Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 15:54:16 Comm success
+
+05-02-2019 16:10:20Data received: read 260,  total read 260, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 260, expected: 260
+
+05-02-2019 16:10:20 Comm success
+
+05-02-2019 16:30:32Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 16:30:32 Comm success
+
+05-02-2019 16:48:47Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 16:48:47 Comm success
+
+05-02-2019 17:10:42Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 17:10:42 Comm success
+
+05-02-2019 17:26:50Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 17:26:50 Comm success
+
+05-02-2019 17:47:00Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 17:47:00 Comm success
+
+05-02-2019 18:03:07Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 18:03:07 Comm success
+
+05-02-2019 18:27:20Data received: read 526,  total read 526, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 526, expected: 526
+
+05-02-2019 18:27:20 Comm success
+
+05-02-2019 18:43:21Data received: read 260,  total read 260, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 260, expected: 260
+
+05-02-2019 18:43:21 Comm success
+
+05-02-2019 18:59:29Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 18:59:29 Comm success
+
+05-02-2019 19:23:39Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 19:23:39 Comm success
+
+05-02-2019 19:46:16Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 19:46:16 Comm success
+
+05-02-2019 20:11:53Data received: read 526,  total read 526, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 526, expected: 526
+
+05-02-2019 20:11:53 Comm success
+
+05-02-2019 20:33:59Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 20:33:59 Comm success
+
+05-02-2019 20:52:05Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 20:52:05 Comm success
+
+05-02-2019 21:16:13Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 21:16:13 Comm success
+
+05-02-2019 21:44:36Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 21:44:36 Comm success
+
+05-02-2019 22:04:38Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 22:04:38 Comm success
+
+05-02-2019 22:22:16Data received: read 526,  total read 526, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 526, expected: 526
+
+05-02-2019 22:22:16 Comm success
+
+05-02-2019 22:37:23Data received: read 393,  total read 393, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 393, expected: 393
+
+05-02-2019 22:37:23 Comm success
+
+05-02-2019 22:52:51Data received: read 440,  total read 440, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 440, expected: 440
+
+05-02-2019 22:52:51 Comm success
+
+05-02-2019 23:30:00Data received: read 1024,  total read 1024, clientId 424270608, packageId 66, transaction Id 1818584432
+
+05-02-2019 23:30:00Data received: read 144,  total read 1168, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 1168, expected: 1168
+
+05-02-2019 23:30:00 Comm success
+
+05-02-2019 23:57:22Data received: read 581,  total read 581, clientId 424270608, packageId 66, transaction Id 1818584432
+
+ incoming data read complete - bytes read: 581, expected: 581
+
+05-02-2019 23:57:22 Comm success
+
