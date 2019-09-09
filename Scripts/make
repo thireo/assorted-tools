@@ -1,0 +1,3 @@
+pyinstaller --onefile nrfflashreader.py
+cp dist/nrfflashreader.exe 'C:\svnrepos\8042\branches\nrfflashreader.exe'
+echo Built nrfflashreader.exe
