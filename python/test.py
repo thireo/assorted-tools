@@ -12,7 +12,9 @@ from kivy.uix.gridlayout import GridLayout
 from subprocess import PIPE, Popen
 from threading import Thread
 from time import sleep
-
+import psutil
+import logging
+import sys
 
 #Config.set('graphics','width','20')
 #Config.set('graphics','height','20')
@@ -46,33 +48,33 @@ class TestApp(App):
 		if(self.languages.text == "DK"):
 			print("ecm21.apk")
 			self.chosenAPK = "ecm21.apk"
-			self.mButton.text = "Installér Dansk ECM"
+			self.mButton.text = "Installer Dansk ECM"
 		elif(self.languages.text == "DE"):
 			print("ecmde21.apk")
 			self.chosenAPK = "ecmde21.apk"
-			self.mButton.text = "Installér Tysk ECM"
+			self.mButton.text = "Installer Tysk ECM"
 		elif(self.languages.text == "UK"):
 			print("ecmuk21.apk")
 			self.chosenAPK = "ecmuk21.apk"
-			self.mButton.text = "Installér UK ECM"
+			self.mButton.text = "Installer UK ECM"
 		elif(self.languages.text == "SE"):
 			print("abse21.apk")
 			self.chosenAPK = "abse21.apk"
-			self.mButton.text = "Installér Svensk ECM"
+			self.mButton.text = "Installer Svensk ECM"
 		elif(self.languages.text == "NO"):
 			print("abno21.apk")
 			self.chosenAPK = "abno21.apk"
-			self.mButton.text = "Installér Norsk ECM"
+			self.mButton.text = "Installer Norsk ECM"
 		elif(self.languages.text == "NL"):
 			print("qv21.apk")
 			self.chosenAPK = "qv21.apk"
-			self.mButton.text = "Installér Hollandsk ECM"
+			self.mButton.text = "Installer Hollandsk ECM"
 		else:
 			print("bob")
 	
 	
 	languages = Spinner(
-		text='Vælg sprog her:',
+		text='Vaelg sprog her:',
 		values=('DK','DE','SE','NO','NL','UK'),
 		text_autoupdate=True)
 	
@@ -121,7 +123,7 @@ class TestApp(App):
 			print("ERROR: Couldn't install ECM")
 			return bob.returncode
 
-		txt1.text = "Giver fornødne rettigheder"
+		txt1.text = "Giver fornoedne rettigheder"
 		subprocess.run(['adb','shell','pm','grant','dk.danishcare.epicare.mobile2','android.permission.WRITE_EXTERNAL_STORAGE'],capture_output=True)
 		subprocess.run(['adb','shell','pm','grant','dk.danishcare.epicare.mobile2','android.permission.READ_CALL_LOG'],capture_output=True)
 		subprocess.run(['adb','shell','pm','grant','dk.danishcare.epicare.mobile2','android.permission.BLUETOOTH'],capture_output=True)
@@ -145,11 +147,11 @@ class TestApp(App):
 		print(bob.stdout.decode('utf-8'))
 		print("Permissions granted:\t",bob.returncode)
 		txt1.text = bob.stdout.decode('utf-8')
-		txt1.text = "Nægter batteri optimering for ECM"
+		txt1.text = "Naegter batteri optimering for ECM"
 		subprocess.run(['adb','shell','dumpsys','deviceidle','whitelist','+dk.danishcare.epicare.mobile2'],capture_output=True)
-		txt1.text = "Sætter ECM som standard opkaldsapp"
+		txt1.text = "Saetter ECM som standard opkaldsapp"
 		subprocess.run(['adb','shell','settings','put','secure','dialer_default_application','dk.danishcare.epicare.mobile2'],capture_output=True)
-		txt1.text = "Åbner ECM app"
+		txt1.text = "Aabner ECM app"
 		subprocess.run(['adb','shell','am','start','-n','dk.danishcare.epicare.mobile2/.EpiCareFreeActivity'],capture_output=True) 
 
 		#subprocess.run(['adb','shell','am','broadcast','-a','dk.danishcare.epicare.mobile2.tts','--ei','dk.danishcare.epicare.mobile2.tts.key','0x2a2a'],capture_output=True)
@@ -157,7 +159,17 @@ class TestApp(App):
 
 		txt1.text = "All done. Ready for the next :) "
 		return
-
+	def restart(self,instance):
+		try:
+			p = psutil.Process(os.getpid())
+			for handler in p.open_files() + p.connections():
+				os.close(handler.fd)
+			os.kill(p,signal.SIGINT)
+		except Exception, e:
+			logging.error(e)
+		python = sys.executable
+		#sleep(10)
+		os.execl(python, python, "\"{}\"".format(sys.argv[0]))
 
 	def press(self,instance):
 		print('Pressed')
@@ -198,7 +210,7 @@ class TestApp(App):
 		layout.add_widget(self.mButton)
 		layout.add_widget(Button(text='CLEAN'))
 		btn = Button(text='EXIT')
-		btn.bind(on_press=self.stopiness)
+		btn.bind(on_press=self.restart)
 		layout.add_widget(btn)
 		#self.languages.on_text = self.langSelecter()
 		layout.add_widget(txt1)
