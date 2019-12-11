@@ -1,0 +1,3 @@
+ps -T -p PID | wc -l     #// GET THREAD COUNT FOR PID
+nohup python .... & 	#// START PYTHON SCRIPT WITHOUT LISTENING TO SIG -> YOU CAN CLOSE TERMINAL 
+
