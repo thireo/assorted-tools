@@ -1,0 +1,13 @@
+cd cvs2svn-2.5.0
+
+C:/Users/Andreas/.platformio/python27/python.exe cvs2git --blobfile=/tmp/gitblob.dat --dumpfile=/tmp/gitdump.dat "../cvsrepo/Hjemmeside" --encoding=WINDOWS-1252
+
+cd CVS-REPO-ROOT
+
+git init --bare REPONAVN
+
+cat /tmp/gitblob.dat /tmp/gitdump.dat | git fast-import
+
+
+
+#FOR CHECKOUT/CLONING
