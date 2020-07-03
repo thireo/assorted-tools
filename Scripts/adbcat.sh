@@ -1,2 +1,3 @@
-pid=$(adb shell ps | grep danishcare | cut -f8-9 -d' ')
+pid=$(adb shell ps -o NAME -o PID | grep danishcare | cut -f2 -d' ')
+#echo $pid
 adb logcat --pid $pid -v color
