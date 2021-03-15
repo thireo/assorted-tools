@@ -42,3 +42,6 @@ adb shell am broadcast -a "dk.danishcare.opkald.lægpå"
 
 adb -s 10.2.7.112 logcat -v color -s "SensorAlarmController","SensorActionService","UnderOpkaldService","MainOpkald","OpkaldsService"
 
+adb shell cmd package install-existing <name of package>
+
+adb shell pm uninstall --user 0 <name of package>
