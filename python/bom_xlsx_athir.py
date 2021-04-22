@@ -6,14 +6,14 @@
 
 """
     @package
-    Generate a csv list file.
+    Generate a xlsx file.
     Components are sorted by ref
     One component per line
     Fields are (if exist)
     Ref, Value, Footprint, Datasheet, Type,Manufacturer, Comment
 
     Command line:
-    python "pathToFile/bom_csv_sorted_by_ref.py" "%I" "%O.csv"
+    python "pathToFile/bom_xlsx_athir.py" "%I" "%O.xlsx"
 """
 
 from __future__ import print_function
@@ -65,16 +65,25 @@ def myEqu(self, other):
     result = True
     if self.getValue() != other.getValue():
         result = False
-    elif self.getPartName() != other.getPartName():
-        result = False
+
     elif self.getFootprint() != other.getFootprint():
         result = False
+        #print(other.getValue())
     elif self.getField("Tolerance") != other.getField("Tolerance"):
         result = False
-    #elif self.getField("Manufacturer") != other.getField("Manufacturer"):
-    #    result = False
+        #print(other.getValue())
     elif self.getField("Voltage") != other.getField("Voltage"):
         result = False
+    elif self.getField("Mounted") != other.getField("Mounted"):
+        result = False
+        #print(other.getValue())
+    #elif self.getField("Manufacturer") != other.getField("Manufacturer"):
+    #    result = False
+        '''elif self.getPartName() != other.getPartName():
+        result = False
+        print('\''+other.getPartName()+'\'')
+        print('\''+self.getPartName()+'\'')'''
+    
 
     return result
 
@@ -113,12 +122,12 @@ centered.font = Font(size=11)
 centered.alignment = Alignment(horizontal="center",vertical="bottom")
 wb.add_named_style(centered)
 
-redFill = PatternFill(start_color='FA0000',
-                   end_color='FA0000',
+redFill = PatternFill(start_color='cf0202',
+                   end_color='cf0202',
                    fill_type='solid')
 
-greenFill = PatternFill(start_color='00FA00',
-end_color='00FA00',
+greenFill = PatternFill(start_color='047511',
+end_color='047511',
 fill_type='solid')
 
 worksheet.append(['BOM - Sleep-Care'])
@@ -130,10 +139,11 @@ for group in grouped:
     if(excluded(exvals,c)):
         reels += 1
 
+
 worksheet.append(['Date:', net.getDate()] )
 worksheet.append(['Tool:', net.getTool()] )
 worksheet.append(['Component Count:', len(components)] )
-worksheet.append(['Reel Count:', reels] )
+#worksheet.append(['Reel Count:', reels] )
 worksheet.append(['Ref', 'Quantity', 'Value', 'Footprint', 'Type','Tolerance','Voltage','Mounting','Manufacturer','Comment','Mouser #'] )#, 'Comment', 'Datasheet'
 
 
@@ -166,7 +176,7 @@ for cells in worksheet["A1":"B5"]:
     for cell in cells:
         cell.style = 'header'
 
-for cells in worksheet["B5":"K5"]:
+for cells in worksheet["B6":"K6"]:
     for cell in cells:
         cell.style = 'header'
 
@@ -175,7 +185,7 @@ for cells in worksheet["A6":"K6"]:
         cell.style = 'headercent'
 
 
-for cells in worksheet["B7":"H50"]:
+for cells in worksheet["B7":"J50"]:
     for cell in cells:
         cell.style = 'centered'
 
@@ -186,20 +196,37 @@ for cells in worksheet["H7":"H50"]:
         elif(re.search("Bottom",str(cell.value))):
             cell.fill = greenFill
 
+for cells in worksheet["K7":"K50"]:
+    for cell in cells:
+        cell.alignment = Alignment(horizontal="right")
+
+for cells in worksheet["A7":"K50"]:
+    if(cells[0].value != None):
+        #print(str(cells[0].value))
+        for cell in cells:
+            cell.border = Border(bottom=thin)
+
+for cells in worksheet["A7":"A50"]:
+	if(cells[0].value != None):
+		for cell in cells:
+			cell.alignment = Alignment(wrap_text=True)
+
 worksheet["A1"].style = 'title'
 worksheet["A6"].alignment = Alignment(horizontal="left")
+worksheet["B6"].alignment = Alignment(horizontal="left")
+#worksheet["A7"].alignment = Alignment(horizontal="left")
 worksheet["B5"].alignment = Alignment(horizontal="left")
 
-worksheet.column_dimensions["A"].width = getColumnWidth(worksheet["A1":"A50"])
-worksheet.column_dimensions["B"].width = getColumnWidth(worksheet["B6":"B50"])
-worksheet.column_dimensions["C"].width = getColumnWidth(worksheet["C6":"C50"])
-worksheet.column_dimensions["D"].width = getColumnWidth(worksheet["D6":"D50"])
-worksheet.column_dimensions["E"].width = getColumnWidth(worksheet["E6":"E50"])
-worksheet.column_dimensions["F"].width = getColumnWidth(worksheet["F6":"F50"])
-worksheet.column_dimensions["G"].width = getColumnWidth(worksheet["G6":"G50"])
-worksheet.column_dimensions["H"].width = getColumnWidth(worksheet["H6":"H50"])
-worksheet.column_dimensions["I"].width = getColumnWidth(worksheet["I6":"I50"])
-worksheet.column_dimensions["J"].width = getColumnWidth(worksheet["J6":"J50"])
-worksheet.column_dimensions["K"].width = getColumnWidth(worksheet["K6":"K50"])
+worksheet.column_dimensions["A"].width = 30#getColumnWidth(worksheet["A1":"A50"])
+worksheet.column_dimensions["B"].width = getColumnWidth(worksheet["B5":"B50"])
+worksheet.column_dimensions["C"].width = getColumnWidth(worksheet["C5":"C50"])
+worksheet.column_dimensions["D"].width = getColumnWidth(worksheet["D5":"D50"])
+worksheet.column_dimensions["E"].width = getColumnWidth(worksheet["E5":"E50"])
+worksheet.column_dimensions["F"].width = getColumnWidth(worksheet["F5":"F50"])
+worksheet.column_dimensions["G"].width = getColumnWidth(worksheet["G5":"G50"])
+worksheet.column_dimensions["H"].width = getColumnWidth(worksheet["H5":"H50"])
+worksheet.column_dimensions["I"].width = getColumnWidth(worksheet["I5":"I50"])
+worksheet.column_dimensions["J"].width = getColumnWidth(worksheet["J5":"J50"])
+worksheet.column_dimensions["K"].width = getColumnWidth(worksheet["K5":"K50"])
 
 wb.save(sys.argv[2])
