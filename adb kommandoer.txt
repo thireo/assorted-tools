@@ -45,3 +45,12 @@ adb -s 10.2.7.112 logcat -v color -s "SensorAlarmController","SensorActionServic
 adb shell cmd package install-existing <name of package>
 
 adb shell pm uninstall --user 0 <name of package>
+
+
+adb shell dumpsys package | grep -Eo "^[[:space:]]+[0-9a-f]+[[:space:]]+<NAME OF PACKAGE>/[^[:space:]]+" | grep -oE "[^[:space:]]+$"
+
+adb shell dumpsys activity a . | grep -E 'mResumedActivity' | cut -d ' ' -f 8
+
+adb backup -noapk dk.danishcare.epicare.mobile2
+dd if=backup.ab bs=24 skip=1|openssl zlib -d > backup2.tar
+tar -xvf backup2.tar
