@@ -28,7 +28,7 @@ from openpyxl.styles import Font, Fill, NamedStyle, Border, Side, Alignment, Pat
 from openpyxl.utils import get_column_letter
 import openpyxl
 
-exvals = ["TestPoint","Barrel_Jack_MountingPin"]
+exvals = ["TestPoint","Barrel_Jack_MountingPin","TEST_1P","Fiducial","TEST_BUTTON","DCT_LOGO","KiCAD Logo","KICAD_LOGO","Dimensions"]
 
 cfps = ["C_1206","C_0805","C_0603","C_0402","C_0201","C_01005"]
 rfps = ["R_1206","R_0805","R_0603","R_0402","R_0201","R_01005"]
