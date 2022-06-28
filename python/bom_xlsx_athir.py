@@ -87,6 +87,22 @@ def myEqu(self, other):
 
     return result
 
+def getTitle(file):
+    with open(file,'r') as f:
+        for line in f.readlines():
+            if(re.match("Title",line)):
+                title = line.split('\"')
+                title = title[1]
+                return title
+
+def getRevision(file):
+    with open(file,'r') as f:
+        for line in f.readlines():
+            if(re.match("Rev",line)):
+                rev = line.split('\"')
+                rev = rev[1]
+                return rev
+
 kicad_netlist_reader.comp.__eq__ = myEqu
 #kicad_netlist_reader.netlist().excluded_values.append("TestPoint")
 # Generate an instance of a generic netlist, and load the netlist tree from
@@ -130,8 +146,9 @@ greenFill = PatternFill(start_color='047511',
 end_color='047511',
 fill_type='solid')
 
-worksheet.append(['BOM - Sleep-Care'])
-worksheet.append(['HW Revision:', ""] )
+#worksheet.append(['Bill of Materials'])
+worksheet.append(['Project:', getTitle(net.getSource())] )
+worksheet.append(['HW Revision:', getRevision(net.getSource())] )
 reels = 0
 for group in grouped:
     for comp in group:
@@ -139,10 +156,12 @@ for group in grouped:
     if(excluded(exvals,c)):
         reels += 1
 
-
+print(reels)
+print(net.getSource())
 worksheet.append(['Date:', net.getDate()] )
 worksheet.append(['Tool:', net.getTool()] )
-worksheet.append(['Component Count:', len(components)] )
+worksheet.append(['Components:', "=SUM(B7:B100)-SUM.HVIS(H7:H100,\"-\",B7:B100)"] )
+#worksheet.append(['Reels',reels])
 #worksheet.append(['Reel Count:', reels] )
 worksheet.append(['Ref', 'Quantity', 'Value', 'Footprint', 'Type','Tolerance','Voltage','Mounting','Manufacturer','Comment','Mouser #'] )#, 'Comment', 'Datasheet'
 
@@ -212,6 +231,7 @@ for cells in worksheet["A7":"A50"]:
 			cell.alignment = Alignment(wrap_text=True)
 
 worksheet["A1"].style = 'title'
+worksheet["B1"].style = 'title'
 worksheet["A6"].alignment = Alignment(horizontal="left")
 worksheet["B6"].alignment = Alignment(horizontal="left")
 #worksheet["A7"].alignment = Alignment(horizontal="left")
